@@ -3,10 +3,10 @@ var accessToken = '4d9a743be6c444498e88b4b327567e82',
     $speechInput,
     $recBtn,
     recognition,
-    messageRecording = 'Recording...',
-    messageCouldntHear = "I couldn't hear you, could you say that again?",
-    messageInternalError = "Oh no, there has been an internal server error",
-    messageSorry = "I'm sorry, I don't have the answer to that yet.";
+    messageRecording = 'Gravando...',
+    messageCouldntHear = "Eu não conseguir te ouvir, pode falar novamente?",
+    messageInternalError = "Oh não, houve um erro de servidor interno",
+    messageSorry = "Desculpe, ainda não tenho a resposta para isso.";
         
 $(function(){
     
@@ -104,7 +104,13 @@ $(function(){
             },
             error: function(){
                 respond(messageInternalError);
+            },
+            complete: function(){
+                $('#carregando').hide();
             }
+        })
+        .always(function(){
+            $('#carregando').show();
         });
     }
     function prepareResponse(val){
