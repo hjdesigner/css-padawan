@@ -88,6 +88,7 @@ $(function(){
     }
 
     function send(){
+
         var text = $speechInput.val();
         $.ajax({
             type: "POST",
