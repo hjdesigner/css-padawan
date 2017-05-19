@@ -5,7 +5,7 @@ html {
     overflow-y: scroll;
 }
 body {
-    background-color: #f2f2f2;
+    background-color: $bg-site;
     font-family: $font !important;
     font-size: 100% !important;
 }
@@ -15,12 +15,12 @@ body {
     body { overflow-y: hidden; }
 }
 ::-moz-selection {
-    background: rgb(34, 214, 187);
-    color: #FFFFFF;
+    background: $bg-selection;
+    color: $text-selection;
     text-shadow: none;
 }
 ::selection {
-    background: rgb(34, 214, 187);
-    color: #FFFFFF;
+    background: $bg-selection;
+    color: $text-selection;
     text-shadow: none;
 }

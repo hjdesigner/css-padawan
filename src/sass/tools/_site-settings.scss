@@ -1,5 +1,23 @@
 @charset "UTF-8";
 
+//FONTS
+
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,600,900');
 
 $font: 'Titillium Web', sans-serif;
+
+//COLORS
+
+$text-default: #000;  
+$label-active: #999;
+$bg-site: #f2f2f2;
+$bg-selection: rgb(34, 214, 187);
+$text-selection: #FFF;
+$bg-buttom: #22d6bb;
+$bg-response: #dcdbdb;
+$title: $bg-buttom;
+
+//Breakpoints
+$tablet: 600px;
+$desktop: 924px;
+$desktop-full: 1200px;

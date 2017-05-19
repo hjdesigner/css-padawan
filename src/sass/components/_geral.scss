@@ -1,23 +1,25 @@
 .btn-rec{
-  background-color: #22d6bb;
+  background-color: $bg-buttom;
 }
 label[for="speech"],
 input.input-duvida{
-  font-size: 1.5em;
-  color: #000;
+  font-size: 1.2em;
+  color: $text-default;
   font-weight: 600;
+  text-align: center;
 }
 label[for="speech"].active{
-  font-size: 1.2em !important;
-  color: #999;
+  font-size: 1em !important;
+  color: $label-active;
 }
 .spoken-response{
-  font-size: 1.5em;
-  background-color: #dcdbdb;
-  color: #000;
+  font-size: 1em;
+  background-color: $bg-response;
+  color: $text-default;
   font-weight: 600;
   padding: 20px;
-  opacity: 0;
+  line-height: 20px;
+  opacity: 1;
 }
 .spoken-response.is-active{
   transition: opacity .25s ease-in-out;
@@ -26,25 +28,29 @@ label[for="speech"].active{
 .title{
   font-weight: 900;
   text-align: center;
-  color: #22d6bb;
-  font-size: 5em;
-  margin-bottom: 30px;
+  color: $title;
+  font-size: 2.3em;
+  margin-bottom: 10px;
+  margin-top: 3%;
+  margin-top: 10px;
 }
-.title:before{
-  content: "";
-  width: 100%;
-  height: 160px;
-  float: left;
-  text-align: center;
-  background-image: url('../image/robo.png');
+.robo{
+  width: 50px;
+  height: 50px;
+  background-image: url(../image/robo.png);
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: contain;
+  position: fixed;
+  display: inline-block;
+  bottom: 0%;
+  right: 0;
 }
 .text{
   font-weight: 600;
   text-align: center;
-  font-size: 1.4em;
-  margin-bottom: 50px;
+  font-size: 1em;
+  margin-bottom: 20px;
 }
 .btn-record{
   text-align: center;
@@ -58,22 +64,85 @@ label[for="speech"].active{
   font-size: 1em;
   display: none;
 }
-@media screen and (max-width: 425px){
-  .title{
-    font-size: 4em;
-  }
-  .text {
-    font-size: 1.4em;
-    margin-bottom: 50px;
+.version{
+  p{
+    text-align: center;
+    font-size: .8em;
+    font-weight: 600;
   }
 }
-.link-github{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-    svg{
-      width: 70px;
-      height: 70px;
-      
+.links{
+  margin-top: 10px;
+  ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  li{
+    float: left;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+    &.telegram{
+      a{
+        display: flex;
+        justify-content: center;
+        color: $text-default;
+        strong{
+          font-weight: 600;
+        }
+        &:before{
+          content: "";
+          width: 19px;
+          height: 16px;
+          display: inline-block;
+          background-image: url(../image/telegram-logo.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          padding-right: 0px;
+          margin-right: 1px;
+        }
+      }
     }
+  }
+}
+@media screen and (min-width: $tablet){
+  .title{
+    font-size: 3.4em;
+    margin-bottom: 20px;
+    margin-top: 3%;
+    &:before{
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+  .text{
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: $desktop){
+  .title{
+    font-size: 4em;
+    margin-bottom: 30px;
+  }
+  .text{
+    font-size: 1.4em;
+    margin-bottom: 30px;
+  }
+  .spoken-response {
+    font-size: 1.2em;
+  }
+}
+@media screen and (min-width: $desktop-full){
+  .title{
+    font-size: 5em;
+    margin-top: 20px;
+  }
+  .robo{
+    width: 70px;
+    height: 70px;
+  }
 }
