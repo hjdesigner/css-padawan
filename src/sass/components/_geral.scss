@@ -19,7 +19,7 @@ label[for="speech"].active{
   font-weight: 600;
   padding: 20px;
   line-height: 20px;
-  opacity: 1;
+  opacity: 0;
 }
 .spoken-response.is-active{
   transition: opacity .25s ease-in-out;
