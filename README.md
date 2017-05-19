@@ -16,6 +16,7 @@
 > Contribuindo
 
 * Clone o repositorio
+* Crie uma branch
 * npm install
 * gulp
 * http://localhost:8080
