@@ -122,6 +122,9 @@ label[for="speech"].active{
     font-size: 1.2em;
     margin-bottom: 20px;
   }
+  label[for="speech"], input.input-duvida{
+    text-align: left;
+  }
 }
 @media screen and (min-width: $desktop){
   .title{

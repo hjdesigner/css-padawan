@@ -1,5 +1,6 @@
 var gulp         = require('gulp'),
     clean        = require('gulp-clean'),
+    imagemmin     = require('gulp-imagemin'),
     browserSync  = require('browser-sync'),
     sass         = require('gulp-sass'),
     sourcemaps   = require('gulp-sourcemaps'),
@@ -12,19 +13,26 @@ var config = {
 var paths = {
  styles: ['css/**/*.css'],
  html: ['index.html'],
- images: ['images/**/*.jpg'], 
+ images: ['image/**/*.+(jpg|png|ico)'], 
+ js: ['js/**/*.js']
 };
 gulp.task('copy', ['clean'], function(){
  gulp.src(paths.html, {cwd: config.srcPath})
      .pipe(gulp.dest(config.distPath));
  gulp.src(paths.styles, {cwd: config.srcPath})
-     .pipe(gulp.dest(config.distPath + 'css'));
- gulp.src(paths.images, {cwd: config.srcPath})
-     .pipe(gulp.dest(config.distPath + 'images'));
+     .pipe(gulp.dest(config.distPath + 'css')); 
+gulp.src(paths.js, {cwd: config.srcPath})
+     .pipe(gulp.dest(config.distPath + 'js')); 
+ gulp.start('build-img');
 });
 gulp.task('clean', function(){
  return gulp.src(config.distPath)
             .pipe(clean());
+});
+gulp.task('build-img',function(){
+  gulp.src('src/image/**/*')
+    .pipe(imagemmin())
+    .pipe(gulp.dest('dist/image'));
 });
 gulp.task('sass', function(){
  return gulp.src(config.srcPath+'sass/style.+(scss|sass)')
