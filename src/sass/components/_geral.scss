@@ -19,7 +19,7 @@ label[for="speech"].active{
   font-weight: 600;
   padding: 20px;
   line-height: 20px;
-  opacity: 1;
+  opacity: 0;
 }
 .spoken-response.is-active{
   transition: opacity .25s ease-in-out;
@@ -121,6 +121,9 @@ label[for="speech"].active{
   .text{
     font-size: 1.2em;
     margin-bottom: 20px;
+  }
+  label[for="speech"], input.input-duvida{
+    text-align: left;
   }
 }
 @media screen and (min-width: $desktop){

@@ -103,11 +103,11 @@ $(function(){
             success: function(data){
                 prepareResponse(data);
             },
+            complete:function(data){
+                $('#carregando').hide();
+            },
             error: function(){
                 respond(messageInternalError);
-            },
-            complete: function(){
-                $('#carregando').hide();
             }
         })
         .always(function(){
