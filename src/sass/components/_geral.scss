@@ -1,6 +1,17 @@
 .btn-rec{
   background-color: $bg-buttom;
 }
+.github{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  right: 0;
+    svg{
+      width: 60px;
+      height: 60px;
+    }
+}
 label[for="speech"],
 input.input-duvida{
   font-size: 1.2em;
@@ -50,13 +61,13 @@ label[for="speech"].active{
   opacity: 1;
 }
 .title{
+  margin-bottom: 10px;
+  margin-top: 3%;
+  margin-top: 10px;
   font-weight: 900;
   text-align: center;
   color: $title;
   font-size: 2.3em;
-  margin-bottom: 10px;
-  margin-top: 3%;
-  margin-top: 10px;
 }
 .robo{
   width: 50px;
@@ -69,6 +80,11 @@ label[for="speech"].active{
   display: inline-block;
   bottom: 0%;
   right: 0;
+    a{
+      width: 50px;
+      height: 50px;
+      float: left;
+    }
 }
 .text{
   font-weight: 600;
@@ -132,10 +148,18 @@ label[for="speech"].active{
   }
 }
 @media screen and (min-width: $tablet){
+  .github{
+    width: 80px;
+    height: 80px;
+      svg{
+        width: 80px;
+        height: 80px;
+      }
+  }
   .title{
-    font-size: 3.4em;
     margin-bottom: 20px;
     margin-top: 3%;
+    font-size: 3.4em;        
     &:before{
       position: relative;
       top: 0;
@@ -184,5 +208,9 @@ label[for="speech"].active{
   .robo{
     width: 70px;
     height: 70px;
+      a{
+        width: 70px;
+      height: 70px;
+      }
   }
 }
