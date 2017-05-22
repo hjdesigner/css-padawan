@@ -3,6 +3,7 @@ var gulp         = require('gulp'),
     imagemmin     = require('gulp-imagemin'),
     browserSync  = require('browser-sync'),
     sass         = require('gulp-sass'),
+    minify       = require('gulp-minify');
     sourcemaps   = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer');
 
@@ -21,9 +22,21 @@ gulp.task('copy', ['clean'], function(){
      .pipe(gulp.dest(config.distPath));
  gulp.src(paths.styles, {cwd: config.srcPath})
      .pipe(gulp.dest(config.distPath + 'css')); 
-gulp.src(paths.js, {cwd: config.srcPath})
+ gulp.src(paths.js, {cwd: config.srcPath})
      .pipe(gulp.dest(config.distPath + 'js')); 
  gulp.start('build-img');
+});
+gulp.task('compress', function() {
+  gulp.src('src/js/*.js')
+    .pipe(minify({
+        ext:{
+            src:'-debug.js',
+            min:'.js'
+        },
+        exclude: ['tasks'],
+        ignoreFiles: ['.script.js', '-min.js']
+    }))
+    .pipe(gulp.dest('dist/js'))
 });
 gulp.task('clean', function(){
  return gulp.src(config.distPath)
