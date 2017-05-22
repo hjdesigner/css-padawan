@@ -46,11 +46,11 @@
       <div class="col s12">
         <div class="row">
           <div class="input-field col s12 m10 xl11">
-            <label for="speech">Digite sua dúvida sobre CSS</label>              
-            <input id="speech" type="text" class="validate input-duvida">
+            <label for="speech"></label>              
+            <input id="speech" type="text" class="validate input-duvida" onkeypress="return captureValue(event);" placeholder="Digite sua dúvida sobre CSS">
           </div>
           <div class="input-field col s12 m2 xl1 btn-record">
-            <button id="rec" class="btn-floating btn-large waves-effect waves-light btn-rec"><i class="large material-icons">settings_voice</i></button>
+            <button id="rec" class="btn-floating btn-large waves-effect waves-light btn-rec" onclick="return switchRecognition(event)"><i class="large material-icons">settings_voice</i></button>
           </div>
         </div>
       </div>
@@ -67,8 +67,6 @@
   <div class="robo"></div>
   
 
-  <script src="./js/jquery.js"></script>
-  <script src="./js/materialize.min.js"></script>
   <script src="./js/script.js"></script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
