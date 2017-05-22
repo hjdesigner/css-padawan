@@ -7,6 +7,30 @@ input.input-duvida{
   color: $text-default;
   font-weight: 600;
   text-align: center;
+    &::-webkit-input-placeholder{
+      font-size: 1.2em;
+      color: $text-default;
+      font-weight: 600;
+      text-align: center;
+    }
+    &::-ms-input-placeholder{
+      font-size: 1.2em;
+      color: $text-default;
+      font-weight: 600;
+      text-align: center;
+    }
+    &:-moz-placeholder{
+      font-size: 1.2em;
+      color: $text-default;
+      font-weight: 600;
+      text-align: center;
+    }
+    &::placeholder{
+      font-size: 1.2em;
+      color: $text-default;
+      font-weight: 600;
+      text-align: center;
+    }
 }
 label[for="speech"].active{
   font-size: 1em !important;
@@ -122,8 +146,21 @@ label[for="speech"].active{
     font-size: 1.2em;
     margin-bottom: 20px;
   }
-  label[for="speech"], input.input-duvida{
+  label[for="speech"],
+  input.input-duvida{
     text-align: left;
+      &::-webkit-input-placeholder{
+        text-align: left;
+      }
+      &::-ms-input-placeholder{
+        text-align: left;
+      }
+      &:-moz-placeholder{
+        text-align: left;
+      }
+      &::placeholder{
+        text-align: left;
+      }
   }
 }
 @media screen and (min-width: $desktop){
