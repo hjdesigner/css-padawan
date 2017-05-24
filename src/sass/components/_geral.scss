@@ -117,35 +117,35 @@ label[for="speech"].active{
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
   }
   li{
-    float: left;
     text-align: center;
     margin-bottom: 10px;
-    width: 100%;
-    &.telegram{
-      a{
-        display: flex;
-        justify-content: center;
-        color: $text-default;
-        strong{
-          font-weight: 600;
-        }
-        &:before{
-          content: "";
-          width: 19px;
-          height: 16px;
-          display: inline-block;
-          background-image: url(../image/telegram-logo.png);
-          background-repeat: no-repeat;
-          background-size: contain;
-          padding-right: 0px;
-          margin-right: 1px;
-        }
+    margin-right: 1%;      
+  }
+}
+.telegram{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+    a{
+      strong{
+        font-weight: 600;
+      }
+      &:before{
+        content: "";
+        width: 19px;
+        height: 16px;
+        display: inline-block;
+        background-image: url(../image/telegram-logo.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-right: 0px;
+        margin-right: 1px;
       }
     }
-  }
 }
 @media screen and (min-width: $tablet){
   .github{
@@ -185,6 +185,12 @@ label[for="speech"].active{
       &::placeholder{
         text-align: left;
       }
+  }
+  .links{
+    ul{
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 @media screen and (min-width: $desktop){
